@@ -1,0 +1,71 @@
+Imagine you're testing a login page.
+
+Requirements:
+1. User enters an email address.
+2. User enters a password.
+3. User clicks Login.
+4. If credentials are correct, the user enters the dashboard.
+5. If credentials are incorrect, an error message appears.
+Your challenge
+You need to identify test scenarios.
+
+I want you to think like an experienced QA engineer.
+
+Tell me:
+1. What positive test cases would you execute?
+2. What negative test cases would you execute?
+3. What boundary or edge cases might developers forget?
+4. What happens if the user clicks Login multiple times quickly?
+
+
+Problem 5 – QA testing evaluation
+1. Positive test cases
+You suggested:
+- Check password length.
+- Check passwords containing special characters.
+These are useful, but they are not necessarily positive login scenarios by themselves.
+
+A positive login test should verify that valid credentials successfully take the user to the dashboard.
+
+Examples:
+- Valid email + valid password.
+- Valid password containing supported special characters.
+- Login with valid credentials after refreshing the page.
+2. Negative test cases
+You suggested:
+- Invalid email and password.
+- Password without special characters.
+- Email without password.
+- Email without @gmail.com.
+Good attempt.
+
+One important correction: an application may accept email addresses from domains other than Gmail. The actual requirement should determine what is valid.
+
+Also, a password without special characters isn't automatically invalid unless the password policy requires them.
+3. Edge cases
+You suggested:
+- Password longer than the allowed length.
+- Password containing only special characters.
+- Email other than Gmail.
+Good thinking about unusual inputs.
+
+Some additional cases to consider:
+- Empty email and password.
+- Email with leading or trailing spaces.
+- Extremely long email address.
+- Password at exactly the minimum allowed length.
+- Password at exactly the maximum allowed length.
+- SQL injection-like input.
+- Expired account or locked account.
+4. Multiple rapid login clicks
+You said you had no idea. That's perfectly fine. This is something we'll practise.
+
+Imagine:
+
+A user enters valid credentials and clicks Login five times within one second.
+
+Possible problems:
+1. Five login requests might reach the server.
+2. Multiple sessions might accidentally be created.
+3. The dashboard might load multiple times.
+4. Duplicate API requests might affect performance.
